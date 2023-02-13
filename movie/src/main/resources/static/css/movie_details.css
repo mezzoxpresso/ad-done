@@ -1,0 +1,19 @@
+
+.scroll {
+max-height:160px;
+overflow-y:scroll;
+overflow-x:clip;
+}
+
+.mar {
+	margin-top: 1%;
+}
+
+.ra{
+	background-color: grey;
+}
+
+body{
+	width:100%; 
+	height:100%;
+}
