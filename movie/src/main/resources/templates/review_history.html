@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-
+<link rel="stylesheet" media="all" th:href="@{/css/movie_details.css}" href="/css/movie_details.css" type="text/css" />
 <link rel="stylesheet" media="all" th:href="@{/bootstrap/css/bootstrap.min.css}" href="/bootstrap/css/bootstrap.min.css"
 	type="text/css" />
 <link rel="stylesheet" href="/assets/star-rating.min.css" />
@@ -18,12 +18,11 @@
 
 <body style="background-color:#212529 ;color:#FFFFFF">
 	<div th:replace="fragments/layout.html :: menu" />
-	<div class="row">
-		<div class="col-sm-3">
-		</div>
-		<h3 class="col-sm-5">My Review History</h3>
+	<div class="header">
+		<h2>My Review History</h2>
 	</div>
 	<br>
+	<div class="review-container">
 	<div th:each="review : ${reviewList}">
 		<div class="row">
 			<div class="col-sm-3">
@@ -52,11 +51,12 @@
 				<h5 th:text="${review.comment}"></h5>
 			</div>
 			<div class="col-sm-1">
-				<a th:href="@{/user/reviewHistory/delete/}+${review.reviewId}" class="btn btn-danger"><span
+				<a th:href="@{/user/reviewHistory/delete/}+${review.reviewId}" class="btn3"><span
 						th:text="Delete"></span></a>
 
 			</div>
 		</div>
+	</div>
 	</div>
 
 	<script src="/assets/star-rating.min.js"></script>
